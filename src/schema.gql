@@ -1,0 +1,132 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type Auth {
+  """Example field (placeholder)"""
+  exampleField: Int!
+}
+
+input AuthInput {
+  email: String!
+  password: String!
+}
+
+input AuthOtpInput {
+  email: String!
+  otp: String!
+}
+
+input ChangePasswordInput {
+  email: String!
+  password: String!
+  token: String!
+}
+
+type ChangePasswordStatus {
+  status: Boolean!
+}
+
+input CreateFundraiserInput {
+  approveStatus: String!
+  approvedDate: DateTime!
+  endDate: DateTime!
+  fundraiserName: String!
+  photoGallery: String!
+  requestAmount: Float!
+  startDate: DateTime!
+  users: [CreateUserInput!]!
+}
+
+input CreateUserInput {
+  email: String!
+  password: String!
+}
+
+"""
+A date-time string at UTC, such as 2019-12-03T09:54:33Z, compliant with the date-time format.
+"""
+scalar DateTime
+
+type ForgetPasswordTokens {
+  accessToken: String!
+  token: String!
+}
+
+type Fundraiser {
+  fundraiserName: String!
+}
+
+type GenerateOtp {
+  otp: String!
+}
+
+type Mutation {
+  changePassword(data: ChangePasswordInput!): ChangePasswordStatus!
+  createAdminUser(data: CreateUserInput!): User!
+  createAuth(createAuthInput: AuthInput!): Auth!
+  createFundraiser(createFundraiserInput: CreateFundraiserInput!): Fundraiser!
+  createUser(data: CreateUserInput!): User!
+  forgetPassword(data: AuthOtpInput!): ForgetPasswordTokens!
+  generateOtp(data: String!): GenerateOtp!
+  loginUser(data: AuthInput!): Tokens!
+  refreshToken(token: String!): Tokens!
+  removeAuth(id: Int!): Auth!
+  removeFundraiser(id: Int!): Fundraiser!
+  removeUser(id: Int!): User!
+  resetPassword(data: AuthInput!): ResetPasswordToken!
+  updateAuth(updateAuthInput: UpdateAuthInput!): Auth!
+  updateFundraiser(updateFundraiserInput: UpdateFundraiserInput!): Fundraiser!
+  updateUser(updateUserInput: UpdateUserInput!): User!
+}
+
+type Query {
+  auth(id: Int!): Auth!
+  fundraiser(id: Int!): Fundraiser!
+  user(email: String!): User!
+}
+
+type ResetPasswordToken {
+  token: String!
+}
+
+type Tokens {
+  accessToken: String!
+  refreshToken: String!
+}
+
+input UpdateAuthInput {
+  email: String
+  id: Int!
+  password: String
+}
+
+input UpdateFundraiserInput {
+  _id: String!
+  approveStatus: String
+  approvedDate: DateTime
+  endDate: DateTime
+  fundraiserName: String
+  photoGallery: String
+  requestAmount: Float
+  startDate: DateTime
+  users: [CreateUserInput!]
+}
+
+input UpdateUserInput {
+  email: String
+  id: Int!
+  password: String
+}
+
+type User {
+  email: String!
+  id: ID!
+  otp: String!
+  otpCreatedAt: String!
+  refreshToken: String!
+  roles: [String!]!
+  token: String!
+  userType: String!
+  verifiedEmail: Boolean!
+}
