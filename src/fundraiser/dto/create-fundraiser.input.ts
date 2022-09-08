@@ -1,5 +1,4 @@
 import { Field, InputType, ID, HideField } from '@nestjs/graphql';
-import { CreateUserInput } from 'src/user/dto/create-user.input';
 
 @InputType()
 export class CreateFundraiserInput {
@@ -23,7 +22,4 @@ export class CreateFundraiserInput {
 
   @Field(() => String)
   photoGallery: {};
-
-  @Field(() => [CreateUserInput])
-  users: CreateUserInput[];
 }

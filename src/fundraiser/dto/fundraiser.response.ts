@@ -26,7 +26,4 @@ export class Fundraiser {
 
   @Field(() => String)
   photoGallery: {};
-
-  @Field(() => [User])
-  users: User[];
 }

@@ -13,7 +13,7 @@ import { NotificationModule } from './notification/notification.module';
 
 @Module({
   imports: [
-    MongooseModule.forRoot(`mongodb://localhost:27017/HALO`),
+    MongooseModule.forRoot(`mongodb://localhost:27017/halo`),
     GraphQLModule.forRoot<ApolloDriverConfig>({
       driver: ApolloDriver,
       autoSchemaFile: join(process.cwd(), 'src/schema.gql'),
