@@ -1,25 +1,13 @@
-import { Field, ObjectType, Int, ID } from '@nestjs/graphql';
+import { Field, ObjectType } from '@nestjs/graphql';
 
 @ObjectType()
-export class Notification {
-  @Field(() => ID)
-  _id: String;
-
-  @Field()
-  charityPartnerId: string;
-
-  @Field()
+export class CreateNotificationInput {
+  @Field(() => String)
   fundraiserId: string;
 
-  @Field()
-  DonatedAmount: string;
-
-  @Field()
-  approveStatus: string;
-
-  @Field()
+  @Field(() => Date)
   NotificationDate: Date;
 
-  @Field()
-  read: Boolean;
+  @Field(() => String)
+  description: string;
 }

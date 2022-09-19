@@ -1,14 +1,5 @@
 import { ObjectType, Field, Int, HideField } from '@nestjs/graphql';
 import { Schema, Prop, SchemaFactory } from '@nestjs/mongoose';
-import * as mongoose from 'mongoose'
-
-// export const UserSchema = new mongoose.Schema({
-//   email: { type: String, required: true, unique: true },
-//   password: { type: String, required: true },
-//   roles: { type: [String] },
-//   userType: { type: String },
-//   verifiedEmail: { type: Boolean }
-// })
 
 @Schema()
 export class User {
@@ -38,7 +29,6 @@ export class User {
 
   @Prop({ type: String })
   token: string;
-
 }
 
 export const UserSchema = SchemaFactory.createForClass(User);

@@ -1,4 +1,4 @@
-import { Field, ObjectType } from '@nestjs/graphql';
+import { Field, ID, ObjectType } from '@nestjs/graphql';
 import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
 import * as mongoose from 'mongoose';
 
@@ -8,21 +8,17 @@ export class Notification extends mongoose.Document {
   @Prop({ type: String })
   id: mongoose.Types.ObjectId;
 
-  @Field()
+  @Field({ nullable: true })
   @Prop()
-  charityPartnerId: string;
+  fundraiserId: string;
 
+  @Field({ nullable: true })
   @Prop()
-  Amount: string;
+  NotificationDate?: Date;
 
+  @Field({ nullable: true })
   @Prop()
-  approveStatus: string;
-
-  @Prop()
-  NotificationDate: Date;
-
-  @Prop()
-  read: Boolean;
+  description?: string;
 }
 
 export const NotificationSchema = SchemaFactory.createForClass(Notification);

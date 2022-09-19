@@ -10,6 +10,6 @@ import { FundraiserSchema } from './entities/fundraiser.entity';
       { name: 'Fundraiser', schema: FundraiserSchema },
     ]),
   ],
-  providers: [FundraiserResolver, FundraiserService],
+  providers: [FundraiserResolver, FundraiserService, ],
 })
 export class FundraiserModule {}

@@ -15,11 +15,5 @@ export class CreateFundraiserInput {
   endDate: Date;
 
   @Field(() => String)
-  approveStatus: string;
-
-  @Field(() => Date)
-  approvedDate: Date;
-
-  @Field(() => String)
   photoGallery: {};
 }

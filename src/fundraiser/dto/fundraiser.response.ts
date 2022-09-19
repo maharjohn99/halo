@@ -1,5 +1,4 @@
-import { Field, ObjectType, ID, HideField, InputType } from '@nestjs/graphql';
-import { User } from 'src/user/dto/user.dto';
+import { Field, ObjectType, ID } from '@nestjs/graphql';
 
 @ObjectType({ isAbstract: true })
 export class Fundraiser {
@@ -17,12 +16,6 @@ export class Fundraiser {
 
   @Field(() => Date)
   endDate: Date;
-
-  @Field(() => String)
-  approveStatus: string;
-
-  @Field(() => Date)
-  approvedDate: Date;
 
   @Field(() => String)
   photoGallery: {};

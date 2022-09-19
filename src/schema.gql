@@ -28,8 +28,6 @@ type ChangePasswordStatus {
 }
 
 input CreateFundraiserInput {
-  approveStatus: String!
-  approvedDate: DateTime!
   endDate: DateTime!
   fundraiserName: String!
   photoGallery: String!
@@ -38,12 +36,9 @@ input CreateFundraiserInput {
 }
 
 input CreateNotificationInput {
-  DonatedAmount: String!
   NotificationDate: DateTime!
-  approveStatus: String!
-  charityPartnerId: String!
+  description: String!
   fundraiserId: String!
-  read: Boolean!
 }
 
 input CreateUserInput {
@@ -62,7 +57,9 @@ type ForgetPasswordTokens {
 }
 
 type Fundraiser {
+  endDate: DateTime!
   fundraiserName: String!
+  startDate: DateTime!
 }
 
 type GenerateOtp {
@@ -88,13 +85,15 @@ type Mutation {
 }
 
 type Notification {
-  charityPartnerId: String!
+  NotificationDate: DateTime
+  description: String
+  fundraiserId: String
 }
 
 type Query {
   auth(id: Int!): Auth!
-  notification(id: Int!): Notification!
-  projects: [Fundraiser!]!
+  fundraisers: [Fundraiser!]!
+  notifications: [Notification!]!
   user(email: String!): User!
 }
 

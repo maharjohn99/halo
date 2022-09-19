@@ -16,9 +16,11 @@ export class Fundraiser extends mongoose.Document {
   @Prop()
   requestAmount: string;
 
+  @Field()
   @Prop()
   startDate: Date;
 
+  @Field()
   @Prop()
   endDate: Date;
 

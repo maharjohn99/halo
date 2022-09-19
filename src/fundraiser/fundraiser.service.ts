@@ -31,7 +31,7 @@ export class FundraiserService {
   // async findOne(id: String) {
   //   const fundraiser = await this.fundraiserModel.findOne({ _id: id }).exec();
   //   if (!fundraiser) {
-  //     throw new NotFoundException(`Project ${id} not found`);
+  //     throw new NotFoundException(`fundraiser ${id} not found`);
   //   }
   //   return fundraiser;
   // }
